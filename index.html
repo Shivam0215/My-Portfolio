@@ -4,29 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shivam Chauhan | Portfolio</title>
-
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-   <nav>
-    <div class="logo">Shivam</div>
+    <nav class="navbar">
+        <div class="logo">Shivam</div>
 
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Skills</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li>
-    </ul>
-</nav>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <section class="hero">
-        <h1>Hi, I'm Shivam</h1>
-        <p>Aspiring Web Developer</p>
-        <button>View Projects</button>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm Shivam Chauhan</h1>
+            <h2>Aspiring Web Developer</h2>
+            <p>
+                Building modern websites while learning full-stack development.
+            </p>
+
+            <div class="buttons">
+                <a href="#projects" class="btn">View Projects</a>
+                <a href="#contact" class="btn btn-outline">Contact Me</a>
+            </div>
+        </div>
     </section>
 
-    <script src="./js/script.js"></script>
+    <section id="about" class="section">
+        <h2>About Me</h2>
+
+        <p>
+            I am a Computer Science student passionate about web development,
+            software engineering, and building real-world projects.
+            My goal is to become a professional full-stack developer.
+        </p>
+    </section>
+
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+
+        <div class="skills-grid">
+            <div class="skill-card">HTML</div>
+            <div class="skill-card">CSS</div>
+            <div class="skill-card">JavaScript</div>
+            <div class="skill-card">Python</div>
+            <div class="skill-card">Java</div>
+            <div class="skill-card">Git</div>
+            <div class="skill-card">GitHub</div>
+            <div class="skill-card">Linux</div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+
+        <div class="project-grid">
+
+            <div class="project-card">
+                <h3>Portfolio Website</h3>
+                <p>Personal portfolio showcasing my skills and projects.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Cafe-Nest</h3>
+                <p>A Platform for Cafes to automate daily operation.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>eNotes</h3>
+                <p>The right place for all the resources for engineering students.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact Me</h2>
+
+        <form>
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <textarea placeholder="Your Message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2026 Shivam Chauhan. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+
 </body>
 </html>

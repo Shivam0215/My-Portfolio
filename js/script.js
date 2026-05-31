@@ -45,14 +45,18 @@ form.addEventListener("submit", (event) => {
 
 const themeToggle = document.querySelector("#theme-toggle");
 
-themeToggle.addEventListener("click", () => {
+themeToggle.addEventListener("change", () => {
 
-    document.body.classList.toggle("dark-mode");
+    if (themeToggle.checked) {
 
-    if (document.body.classList.contains("dark-mode")) {
+        document.body.classList.add("dark-mode");
         localStorage.setItem("theme", "dark");
+
     } else {
+
+        document.body.classList.remove("dark-mode");
         localStorage.setItem("theme", "light");
+
     }
 
 });
@@ -61,6 +65,9 @@ const savedTheme = localStorage.getItem("theme");
 
 if (savedTheme === "dark") {
     document.body.classList.add("dark-mode");
+    themeToggle.checked = true; // Important!
+} else {
+    themeToggle.checked = false;
 }
 
 const projects = [
@@ -76,7 +83,7 @@ const projects = [
     },
     {
         title: "eNotes",
-        description: "he right place for all the resources for engineering students.",
+        description: "The right place for all the resources for engineering students.",
         category: "web"
     }
 ];
@@ -141,5 +148,34 @@ filterButtons.forEach(button => {
         }
 
     });
+
+});
+
+const transition = document.querySelector(".theme-transition");
+
+themeToggle.addEventListener("change", (e) => {
+
+    const rect = themeToggle.getBoundingClientRect();
+
+    transition.style.left = rect.left + "px";
+    transition.style.top = rect.top + "px";
+
+    transition.classList.add("active");
+
+    setTimeout(() => {
+
+        if (themeToggle.checked) {
+            document.body.classList.add("dark-mode");
+            localStorage.setItem("theme", "dark");
+        } else {
+            document.body.classList.remove("dark-mode");
+            localStorage.setItem("theme", "light");
+        }
+
+    }, 300);
+
+    setTimeout(() => {
+        transition.classList.remove("active");
+    }, 800);
 
 });

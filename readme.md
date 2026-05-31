@@ -16,4 +16,4 @@
 
 ## Live Demo
 
-Coming Soon
+https://shivam-portfolio-liard.vercel.app/)

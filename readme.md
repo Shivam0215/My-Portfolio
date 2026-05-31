@@ -1,16 +1,19 @@
 # Portfolio Website
 
+## Tech Stack
+
+- HTML
+- CSS
+- JavaScript
+
 ## Features
 
-- Home
-- About
-- Skills
-- Projects
-- Contact
-
-## Future Features
-
-- Blog
-- Admin Panel
-- Analytics
+- Responsive Design
+- Mobile Navigation
 - Dark Mode
+- Project Filtering
+- Contact Form Validation
+
+## Live Demo
+
+Coming Soon

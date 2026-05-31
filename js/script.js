@@ -62,3 +62,34 @@ const savedTheme = localStorage.getItem("theme");
 if(savedTheme === "dark"){
     document.body.classList.add("dark-mode");
 }
+
+const projects = [
+    {
+        title: "Portfolio Website",
+        description: "Personal portfolio built using HTML, CSS and JavaScript."
+    },
+    {
+        title: "Cafe-Nest",
+        description: "A Platform for Cafes to automate daily operation."
+    },
+    {
+        title: "eNotes",
+        description: "he right place for all the resources for engineering students."
+    }
+];
+const projectsContainer =
+    document.querySelector("#projects-container");
+    projects.forEach(project => {
+
+    const projectCard = document.createElement("div");
+
+    projectCard.classList.add("project-card");
+
+    projectCard.innerHTML = `
+        <h3>${project.title}</h3>
+        <p>${project.description}</p>
+    `;
+
+    projectsContainer.appendChild(projectCard);
+
+});

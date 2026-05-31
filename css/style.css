@@ -128,6 +128,11 @@ footer{
     background:#111827;
 }
 
+.hamburger{
+    display:none;
+    cursor:pointer;
+}
+
 @media(max-width:768px){
 
     .navbar{
@@ -136,11 +141,20 @@ footer{
     }
 
     .nav-links{
+         display:none;
         flex-wrap:wrap;
         justify-content:center;
+        
     }
 
     .hero h1{
         font-size:2rem;
+    }
+     .hamburger{
+        display:block;
+    }
+    .nav-links.active{
+        display:flex;
+        flex-direction:column;
     }
 }

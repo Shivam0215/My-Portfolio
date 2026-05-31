@@ -133,6 +133,31 @@ footer{
     cursor:pointer;
 }
 
+body.dark-mode {
+    background-color: #ffffff;
+    color: #000000;
+    .skill-card{
+        color: white;
+    }
+    .project-card{
+        color: rgb(255, 255, 255);
+    }
+
+    :placeholder-shown{
+        background-color: #111827;
+    }
+    footer{
+        color: white;
+    }
+    .btn-outline{
+        color: black;
+    }
+}
+
+#theme-toggle{
+    border-radius: 50%;
+}
+
 @media(max-width:768px){
 
     .navbar{

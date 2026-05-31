@@ -25,6 +25,12 @@ body{
     background:#111827;
 }
 
+.logo{
+    img{
+        width: 140px;
+    }
+}
+
 .nav-links{
     display:flex;
     list-style:none;

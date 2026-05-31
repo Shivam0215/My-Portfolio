@@ -49,7 +49,7 @@ themeToggle.addEventListener("click", () => {
 
     document.body.classList.toggle("dark-mode");
 
-    if(document.body.classList.contains("dark-mode")){
+    if (document.body.classList.contains("dark-mode")) {
         localStorage.setItem("theme", "dark");
     } else {
         localStorage.setItem("theme", "light");
@@ -59,27 +59,30 @@ themeToggle.addEventListener("click", () => {
 
 const savedTheme = localStorage.getItem("theme");
 
-if(savedTheme === "dark"){
+if (savedTheme === "dark") {
     document.body.classList.add("dark-mode");
 }
 
 const projects = [
     {
         title: "Portfolio Website",
-        description: "Personal portfolio built using HTML, CSS and JavaScript."
+        description: "Personal portfolio built using HTML, CSS and JavaScript.",
+        category: "web"
     },
     {
         title: "Cafe-Nest",
-        description: "A Platform for Cafes to automate daily operation."
+        description: "A Platform for Cafes to automate daily operation.",
+        category: "web"
     },
     {
         title: "eNotes",
-        description: "he right place for all the resources for engineering students."
+        description: "he right place for all the resources for engineering students.",
+        category: "web"
     }
 ];
 const projectsContainer =
     document.querySelector("#projects-container");
-    projects.forEach(project => {
+projects.forEach(project => {
 
     const projectCard = document.createElement("div");
 
@@ -91,5 +94,52 @@ const projectsContainer =
     `;
 
     projectsContainer.appendChild(projectCard);
+
+});
+function renderProjects(projectList) {
+
+    projectsContainer.innerHTML = "";
+
+    projectList.forEach(project => {
+
+        const projectCard = document.createElement("div");
+
+        projectCard.classList.add("project-card");
+
+        projectCard.innerHTML = `
+            <h3>${project.title}</h3>
+            <p>${project.description}</p>
+        `;
+
+        projectsContainer.appendChild(projectCard);
+
+    });
+
+}
+const filterButtons =
+    document.querySelectorAll(".filter-btn");
+filterButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const category =
+            button.dataset.filter;
+
+        if (category === "all") {
+
+            renderProjects(projects);
+
+        } else {
+
+            const filteredProjects =
+                projects.filter(project =>
+                    project.category === category
+                );
+
+            renderProjects(filteredProjects);
+
+        }
+
+    });
 
 });
